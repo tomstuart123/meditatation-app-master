@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+
+.time-select, .sound-picker, .player-container {
+    border: black;
+    height: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-container {
+    position: relative;
+}
+
+.player-container svg {
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg) ;
+    pointer-events: none;
+}
+
+
+.time-display { 
+    position: absolute;
+    color: white;
+    bottom: 10%;
+    font-size: 50px;
+
+}
+
+video { 
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 1300px;
+    height: 730px;
+    z-index: -1;
+}
+
+.time-select button, .sound-picker button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.time-select button:hover {
+    color: black;
+    background: white;
+}
+
+.sound-picker button {
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.sound-picker button:nth-child(1) {
+    background: #4972a1
+}
+
+.sound-picker button:nth-child(2) {
+    background: #a14f49
+
+}
+
+.sound-picker button img {
+    height: 100%;
+}
+
+
+@media (max-width: 1050px) { 
+
+    .time-select button {
+        font-size: 16px;
+    }   
+}
+
+@media (max-width: 800px) { 
+    .time-select button {
+        font-size: 14px;
+    }   
+}
+
+
+@media (max-width: 600px) { 
+    .time-select button {
+        font-size: 14px;
+        padding: 10px;
+        height: 50px;
+        width: 20%;
+    }   
+
+    .app {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-evenly;
+    }
+
+    .time-select, .sound-picker, .player-container {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    }
+
+    .player-container svg {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg) ;
+    pointer-events: none;
+    }  
+
+    .player-container .play {
+        height: 25%;
+        width: 25%;
+    }
+
+    .player-container .time-display {
+        font-size: 25px;
+    }
+}
+
